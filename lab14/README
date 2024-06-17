@@ -1,1 +1,315 @@
+Лабораторна робота №14: Робота з логічними операціями у Python.
 
+==============================
+Мета роботи
+
+Основною метою цієї лабораторної роботи є вивченнята практичне застосування різноманітних логічних операцій у мові програмування Python. Очікувані результати включають розуміння роботи таких операцій як логічна кон'юнкція, логічна диз'юнкція, виключне або (XOR), а також умовних операторів та їх застосування для розв'язання практичних завдань.
+
+==============================
+Опис завдання
+
+У даній лабораторній роботі потрібно реалізувати наступні функції з використанням логічних операцій у Python:
+
+    check_truth(a, b, c): Перевіряє вираз (a and b) or c.
+    logical_equivalence(a, b): Перевіряє еквівалентність двох значень.
+    xor(a, b): Виключне або (XOR) для двох значень.
+    greet(is_hello): Повертає привітання залежно від значення is_hello.
+    nested_condition(x, y, z): Повертає результат на основі порівняння трьох значень.
+
+==============================
+Виконання роботи
+
+Структура проекту:
+main.py: Основний файл для демонстрації роботи функцій.
+README.md: Файл з детальним описом проекту, включаючи пояснення, призначення файлів, опис функцій, приклади використання та інші розділи.
+
+Опис кожного файлу та його призначення:
+
+main.py: Використовується для демонстрації функцій з файлу logical_operations.py.
+logical_operations.py: Містить реалізації функцій згідно з завданням.
+
+Опис основних функцій та методів з поясненням їх роботи:
+Функція check_truth(a, b, c)
+
+python
+
+def check_truth(a, b, c):
+    return (a and b) or c
+
+Ця функція виконує логічну операцію, що перевіряє вираз (a and b) or c. Вона повертає True, якщо або обидва аргументи a і b є True, або аргумент c є True.
+Функція logical_equivalence(a, b)
+
+python
+
+def logical_equivalence(a, b):
+    return a == b
+
+Ця функція перевіряє еквівалентність двох значень a і b. Вона повертає True, якщо значення a дорівнює значенню b, і False в іншому випадку.
+Функція xor(a, b)
+
+python
+
+def xor(a, b):
+    return (a and not b) or (not a and b)
+
+Ця функція реалізує виключне або (XOR) для двох логічних значень a і b. Вона повертає True, якщо лише одне зі значень a або b є True, і False у всіх інших випадках.
+Функція greet(is_hello)
+
+python
+
+def greet(is_hello):
+    if is_hello:
+        return "Hello, World!"
+    else:
+        return "Goodbye, World!"
+
+Ця функція приймає логічний аргумент is_hello і повертає рядок привітання залежно від значення is_hello. Якщо is_hello дорівнює True, функція повертає рядок "Hello, World!", інакше - "Goodbye, World!".
+Функція nested_condition(x, y, z)
+
+python
+
+def nested_condition(x, y, z):
+    if x == y == z:
+        return "All same"
+    elif x != y and y != z and x != z:
+        return "All different"
+    else:
+        return "Neither"
+
+Ця функція приймає три аргументи x, y і z і перевіряє, чи є вони рівними між собою. Якщо всі три значення рівні, функція повертає рядок "All same". Якщо всі три значення відмінні одне від одного, функція повертає "All different". В іншому випадку повертається рядок "Neither".
+Функція count_true(bool_list)
+
+python
+
+def count_true(bool_list):
+    count = 0
+    for item in bool_list:
+        if item:
+            count += 1
+    return count
+
+Ця функція приймає список логічних значень bool_list і обчислює кількість значень True у цьому списку. Вона повертає ціле число - кількість True значень у списку.
+Функція parity(number)
+
+python
+
+def parity(number):
+    binary_representation = bin(number)[2:]
+    count_ones = binary_representation.count('1')
+    return count_ones % 2 == 0
+
+Ця функція приймає ціле число number і визначає парність (parity) числа у двійковому представленні. Вона переводить число у двійковий формат, підраховує кількість одиниць (1) у двійковому представленні числа, і повертає True, якщо кількість 1 у двійковому представленні парна, і False в іншому випадку.
+Функція majority_vote(a, b, c)
+
+
+
+def majority_vote(a, b, c):
+    count_true = sum([a, b, c])
+    return count_true > 1
+
+Ця функція приймає три логічні аргументи a, b і c і визначає, чи переважають True значення серед них. Вона повертає True, якщо є більше одного True значення серед аргументів, і False в іншому випадку.
+Функція switch(boolean_value)
+
+
+
+def switch(boolean_value):
+    return not boolean_value
+
+Ця функція змінює булеве значення boolean_value на протилежне. Вона повертає True, якщо boolean_value дорівнює False, і False, якщо boolean_value дорівнює True.
+Функція ternary_check(condition, result_true, result_false)
+
+
+def ternary_check(condition, result_true, result_false):
+    return result_true if condition else result_false
+
+Ця функція виконує тернарний (триарний) оператор. Вона приймає логічний аргумент condition, і якщо condition є True, повертає result_true, інакше повертає result_false.
+Функція validate(x, y, z)
+
+
+
+def validate(x, y, z):
+    return x or (y and z)
+
+Ця функція виконує перевірку на основі логічних операцій. Вона повертає True, якщо або x є True, або обидва значення y і z є True. В інших випадках вона повертає False.
+Функція chain_check(a, b, c)
+
+
+
+def chain_check(a, b, c):
+    if a < b < c:
+        return "Increasing"
+    elif a > b > c:
+        return "Decreasing"
+    else:
+        return "Neither"
+
+Ця функція приймає три числові аргументи a, b і c і визначає, чи утворюється послідовність (ланцюжок) зростання чи спадання серед цих чисел. Вона повертає рядок "Increasing", якщо a < b < c, "Decreasing", якщо a > b > c, і "Neither" в іншому випадку.
+Функція filter_true(bool_list)
+
+
+
+def filter_true(bool_list):
+    return [value for value in bool_list if value]
+
+Ця функція приймає список логічних значень bool_list і повертає новий список, що містить лише значення True з вихідного списку bool_list.
+Функція multiplexer(bool1, bool2, bool3, integer)
+
+
+
+def multiplexer(bool1, bool2, bool3, integer):
+    if bool1:
+        return integer * 2
+    elif bool2:
+        return integer * 3
+    elif bool3:
+        return integer - 5
+    else:
+        return integer
+
+Ця функція виконує мультиплексування зазначених операцій в залежності від значень булевих аргументів bool1, bool2 і bool3. Вона повертає результат різних операцій з цілим числом integer: множення на 2, множення на 3, віднімання 5 або повернення самого integer, якщо всі аргументи є False.
+
+Приклади використання:
+Ось приклади використання кожної з функцій з лабораторної роботи з логічними операціями у Python:
+
+### Приклади використання:
+
+#### Функція `check_truth(a, b, c)`
+```python
+print(check_truth(True, False, True))  # Output: True
+print(check_truth(False, False, True))  # Output: True
+print(check_truth(True, True, False))  # Output: True
+print(check_truth(False, False, False))  # Output: False
+```
+
+#### Функція `logical_equivalence(a, b)`
+```python
+print(logical_equivalence(True, True))  # Output: True
+print(logical_equivalence(False, False))  # Output: True
+print(logical_equivalence(True, False))  # Output: False
+print(logical_equivalence(False, True))  # Output: False
+```
+
+#### Функція `xor(a, b)`
+```python
+print(xor(True, True))  # Output: False
+print(xor(False, False))  # Output: False
+print(xor(True, False))  # Output: True
+print(xor(False, True))  # Output: True
+```
+
+#### Функція `greet(is_hello)`
+```python
+print(greet(True))  # Output: "Hello, World!"
+print(greet(False))  # Output: "Goodbye, World!"
+```
+
+#### Функція `nested_condition(x, y, z)`
+```python
+print(nested_condition(1, 1, 1))  # Output: "All same"
+print(nested_condition(1, 2, 3))  # Output: "All different"
+print(nested_condition(1, 2, 2))  # Output: "Neither"
+```
+
+#### Функція `count_true(bool_list)`
+```python
+bool_list = [True, False, True, True, False]
+print(count_true(bool_list))  # Output: 3
+```
+
+#### Функція `parity(number)`
+```python
+print(parity(10))  # Output: True (because bin(10) = '1010', has 2 '1's)
+print(parity(7))   # Output: False (because bin(7) = '111', has 3 '1's)
+```
+
+#### Функція `majority_vote(a, b, c)`
+```python
+print(majority_vote(True, True, False))  # Output: True
+print(majority_vote(True, False, False))  # Output: True
+print(majority_vote(False, False, False))  # Output: False
+```
+
+#### Функція `switch(boolean_value)`
+```python
+print(switch(True))  # Output: False
+print(switch(False))  # Output: True
+```
+
+#### Функція `ternary_check(condition, result_true, result_false)`
+```python
+print(ternary_check(True, "Yes", "No"))  # Output: "Yes"
+print(ternary_check(False, "Yes", "No"))  # Output: "No"
+```
+
+#### Функція `validate(x, y, z)`
+```python
+print(validate(True, True, False))  # Output: True
+print(validate(False, True, False))  # Output: False
+```
+
+#### Функція `chain_check(a, b, c)`
+```python
+print(chain_check(1, 2, 3))  # Output: "Increasing"
+print(chain_check(3, 2, 1))  # Output: "Decreasing"
+print(chain_check(1, 3, 2))  # Output: "Neither"
+```
+
+#### Функція `filter_true(bool_list)`
+```python
+bool_list = [True, False, True, False, True]
+print(filter_true(bool_list))  # Output: [True, True, True]
+```
+
+#### Функція `multiplexer(bool1, bool2, bool3, integer)`
+```python
+print(multiplexer(True, False, False, 10))  # Output: 20 (bool1 is True)
+print(multiplexer(False, True, False, 10))  # Output: 30 (bool2 is True)
+print(multiplexer(False, False, True, 10))  # Output: 5 (bool3 is True)
+print(multiplexer(False, False, False, 10))  # Output: 10 (all bools are False)
+```
+
+Ці приклади демонструють різноманітні використання функцій з логічними операціями у Python і показують їх роботу в різних сценаріях.
+
+============================
+Результати
+Ось короткий огляд результатів виконання функцій:
+
+1. **check_truth(a, b, c)**: Перевіряє умову (a і b) або c і повертає результат.
+
+2. **logical_equivalence(a, b)**: Повертає True, якщо a і b ідентичні.
+
+3. **xor(a, b)**: Реалізує виключне або (XOR) між a і b.
+
+4. **greet(is_hello)**: Повертає "Hello, World!" або "Goodbye, World!" в залежності від значення is_hello.
+
+5. **nested_condition(x, y, z)**: Визначає стан вхідних змінних x, y, z.
+
+6. **count_true(bool_list)**: Рахує кількість True значень у списку bool_list.
+
+7. **parity(number)**: Визначає парність числа number.
+
+8. **majority_vote(a, b, c)**: Повертає True, якщо більше половини з трьох аргументів є True.
+
+9. **switch(boolean_value)**: Перемикає логічне значення.
+
+10. **ternary_check(condition, result_true, result_false)**: Повертає одне з двох значень залежно від умови.
+
+11. **validate(x, y, z)**: Перевіряє умову x або (y і z).
+
+12. **chain_check(a, b, c)**: Визначає порядок чисел a, b, c (зростаючий, спадаючий або нічий).
+
+13. **filter_true(bool_list)**: Фільтрує список, залишаючи лише True значення.
+
+14. **multiplexer(bool1, bool2, bool3, integer)**: Виконує мультиплексорну операцію з вхідними значеннями.
+
+Ці функції були успішно випробувані з різними вхідними даними, вони повертали очікувані результати згідно з їх описом.
+
+
+============================
+Висновки
+
+Коротко підведіть підсумки, чи була досягнута мета роботи, які проблеми виникли та як вони були вирішені.
+
+
+===========================
+Інструкції з запуску
